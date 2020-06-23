@@ -1,0 +1,232 @@
+@import 'variables';
+@import 'mixins';
+
+/*Ejemplo para el @content
+body{
+    background-color:$primario;
+    @include telefono{
+        background-color: $gris;
+    }
+}
+*/
+
+html{
+    @include box-sizing(border-box);
+}
+*,
+*:after,
+*:before{
+    @include box-sizing(inherit);
+}
+
+/*COMIENZO DEL BODY*/
+body{
+    background-color: $negro;
+    font-family: $fuenteprincipal;
+    color:$gris2;
+    @include tablet{
+        background-color: unset;
+        background-image: url('../img/bg2.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom center;
+
+    }
+}
+a{
+    color:$gris2;
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+        color:$blanco;
+    }
+}
+
+.contenedor{
+    width: 90%;
+    margin:0 auto;
+}
+.alerta{
+    color:$secundario;
+    margin-bottom: 1rem;
+    font-size: .8rem;
+    text-align: center;
+}
+input.no-valido{
+    border-bottom: 5px solid $secundario!important;
+}
+.logotipo{
+    margin-top: .7rem;
+    max-width: 100px;
+    @include tablet{
+        margin-left:2%;
+    }
+}
+
+.formulario-login{
+    @include tablet{
+        background-color: rgba(0,0,0,0.88);
+        max-width: 400px;
+        padding: 1rem 3rem;
+        margin:1rem auto 4rem auto;
+    }
+}
+form{
+    legend{
+        color: $blanco;
+        font-size: 1.8rem;
+        margin:2rem 0;
+        font-weight: bold;
+    }
+}
+.campo{
+    display: flex;
+    /*Esto permitira que el label se vea como un placeholder pero se movera al clickear
+    por eso ponemos relative y absolute*/
+    position: relative;
+    margin-bottom: 1rem;
+    label{
+        position: absolute;
+        top:1rem;
+        left:1rem;
+        transition: font-size .5s ease, top .5s ease;
+        font-size: 1rem;
+
+        &.valido{
+            font-size: .80rem;
+            top: .2rem;
+        }
+        
+    }
+    input{
+        /*LE DAMOS FLEX 1 PARA QUE CREESCA EL CAMPO*/
+        flex: 1;
+        padding: 1.2rem 1rem .7rem 1rem;
+        border:none;
+        background-color: $gris;
+        border-radius:$radius;
+        color:$blanco;
+        &:focus{
+            background-color: $gris3;
+            /*PARA QUITAR LA LINEA AZUL AL PASAR POR LOS CUADROS*/
+            outline: none;
+            font-size: .80rem;
+            +label{
+                font-size:.80rem;
+                top:.3rem;
+            }
+        }
+    }
+
+    /*BOTON PARA VER LAS CONTRASEÑAS*/
+    span{
+        position: absolute;
+        right: 1rem;
+        top:1rem;
+        text-decoration: uppercase;
+        &:hover{
+            cursor:pointer;
+        }
+    }
+}
+.submit{
+    display: flex;
+    margin-top:2rem;
+    input[type="submit"]{
+        @include boton($primario);
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.acciones{
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 0;
+    margin: .5rem 0 8rem 0;
+
+    /*el recuerdame y el a deben ser pequeños*/
+    label,a {
+        font-size: .8rem;
+        text-decoration: none;
+    }
+}
+
+.contenido-inferior{
+  @include tablet{
+      padding-bottom: 0;
+  } 
+    a{
+        font-size:.8rem;
+      
+    }
+    .nuevo-usuario{
+        font-size: 1rem;
+        margin-top: 1rem;
+        display: flex;
+        a{
+            font-size: 1rem;
+            color:$blanco;
+            margin-left:.4rem;
+        }
+    }
+}
+
+.site-footer{
+    border-top: 1px solid $gris2;
+    padding:1rem 0 4rem 0;
+    @include tablet{
+        border-top:unset;
+        background-color: rgba(0, 0, 0, 0.826);
+        padding:1rem 0 3rem 0;
+                
+    } 
+    .contenedor{
+
+        p{
+            text-align: center;
+            color:$secundario;
+        }
+
+        @include tablet{
+            max-width: 50%;
+        }
+    }
+    .menu-footer{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include desktop{
+            max-width: 100%;
+        }
+        a{
+            flex: 0 0 auto;
+            font-size: .8rem;
+            margin-right: 5rem;
+            padding:.6rem 0;
+            &:last-of-type{
+                margin-right:0;
+            }
+            color:$blanco;
+        }
+    }
+
+    select{
+        appearance: none;
+        padding: 1rem 3rem;
+        border-radius: $radius;
+        border: 1px solid $gris3;
+        font-size: .898rem;
+        background-color: $negro;
+        color:$gris2;
+        margin-top:2rem;
+        &:hover{
+            background-color: $negro;
+            cursor: pointer;
+            color: white;
+            border: 1px solid white;
+            font-size: 14px;
+        }
+    }
+}

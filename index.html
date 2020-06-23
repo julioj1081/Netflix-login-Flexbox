@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DEVFLIX</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <header class="site-header" style="background-color:rgba(0,0,0); padding-top:.2rem; padding-bottom: .6rem;">
+        <img src="img/logo.svg" alt="logotipo" class="logotipo">
+    </header>
+
+    <main class="formulario-login contenedor">
+        <form action="#">
+            <legend>Inicia session</legend>
+            <div class="campo">
+                <input type="text" id="usuario">
+                <label for="">Email o numero de telefono</label>
+            </div>
+            <div class="campo">
+                <input type="password" id="password">
+                <label for="">Contraseña</label>
+                <span>Mostrar</span>
+            </div>
+            <div class="submit">
+                <input type="submit" value="iniciar session">
+            </div>
+
+            <div class="acciones">
+                <div class="recuerdame">
+                    <input type="checkbox">
+                    <label for="">recuerdame</label>
+                </div>
+                <div class="ayuda">
+                    <a href="#">necesitas ayuda</a>
+                </div>
+            </div>
+            <!--ACCIONES-->
+        </form>
+        <!--CONTENIDO EXTERIOR-->
+        <div class="contenido-inferior">
+            <a href="#"><span class="icon-facebook"><img alt="Siguenos en Facebook" src="https://lh6.googleusercontent.com/-CYt37hfDnQ8/T3nNydojf_I/AAAAAAAAAr0/P5OtlZxV4rk/s32/facebook32.png" width=16 height=16  /> </span>Iniciar session con facebook</a>
+            <p class="nuevo-usuario">¿Primera vez en devflix? <a>Susbribete ya</a></p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="contenedor">
+            <p>¿Preguntas o aclaraciones? Llama al 01800-265-0161</p>
+            <nav class="menu-footer">
+                <a href="#">Terminos de tarjetas de regalo</a>
+                <a href="#">Terminos de uso</a>
+                <a href="#">Declaracion de privacidad</a>
+            </nav>
+            <select class="lenguaje">
+                <option value="">Idioma</option>
+                <option value="eng">ingles</option>
+                <option value="esp">español</option>
+            </select>
+        </div>
+    </footer>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

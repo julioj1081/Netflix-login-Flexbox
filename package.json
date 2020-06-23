@@ -1,0 +1,16 @@
+{
+  "name": "netflix_inicio",
+  "version": "1.0.0",
+  "description": "proyecto usando flexbox clon de netflix",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "albert",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
